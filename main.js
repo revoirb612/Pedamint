@@ -7,7 +7,8 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: false
         },
-        icon: 'assets/favicon.ico'
+        icon: 'assets/favicon.ico',
+        frame: false
     });
 
     win.loadURL('https://www.pedamint.com');
