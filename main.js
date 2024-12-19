@@ -1,31 +1,39 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
+const path = require('path');
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 1200,
         height: 800,
+        frame: false,
         webPreferences: {
-            nodeIntegration: false
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: false,
+            contextIsolation: true,
+            enableRemoteModule: false
         },
         icon: 'assets/favicon.ico'
     });
 
     win.loadURL('https://www.pedamint.com');
 
-    const webContents = win.webContents;
+    // IPC 이벤트 핸들러
+    ipcMain.handle('reload', () => {
+        win.reload();
+    });
 
-    // Alt + Left Arrow 키로 뒤로가기
-    globalShortcut.register('Alt+Left', () => {
-        if (webContents.navigationHistory.canGoBack()) {
-            webContents.navigationHistory.goBack();
-        }
+    ipcMain.handle('toggleDevTools', () => {
+        win.webContents.toggleDevTools();
+    });
+
+    ipcMain.handle('closeWindow', () => {
+        win.close();
     });
 }
 
 app.on('ready', createWindow);
 
 app.on('will-quit', () => {
-    // 모든 단축키 등록 해제
     globalShortcut.unregisterAll();
 });
 
