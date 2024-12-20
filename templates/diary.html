@@ -1,39 +1,8 @@
-<div class="chat-container rounded">
-    <!-- Input Section -->
-    <div class="input-section">
-        <div class="emoji-selector">
-            <span id="selectedEmoji" class="emoji-icon">😃</span>
-            <div class="emoji-dropdown">
-                <span class="emoji-option">😀</span>
-                <span class="emoji-option">😅</span>
-                <span class="emoji-option">😊</span>
-                <span class="emoji-option">😢</span>
-                <span class="emoji-option">😡</span>
-                <span class="emoji-option">😍</span>
-            </div>
-        </div>
-        <input type="text" id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message">
-    </div>
-
-    <!-- Tag Input Section -->
-    <div class="tag-section">
-        <span class="tag-icon">＃</span>
-        <div id="tagContainer" class="tag-container"></div>
-        <input type="text" id="tagInput" class="tag-input" placeholder="Add tags and press Enter" aria-label="Tag">
-    </div>
-
-    <!-- Icon and Button Section -->
-    <div class="icon-button-section">
-        <div class="icon-container">
-            <!--
-            <span class="icon">📷</span>
-            <span class="icon">🖼️</span>
-            <span class="icon">😃</span>
-            <span class="icon">⏰</span>
-            <span class="icon">📍</span>
-            -->
-        </div>
-        <button class="btn post-button" id="sendButton" type="button">Post</button>
+<!-- 검색 섹션 -->
+<div class="search-container">
+    <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
     </div>
 </div>
 
@@ -42,10 +11,41 @@
     <div id="messageContainer" class="message-container"></div>
 </div>
 
-<!-- 검색 섹션 -->
-<div class="search-container mt-2">
-    <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+<!-- Post 버튼 -->
+<button class="btn post-button mt-2" id="openModalButton" type="button" data-bs-toggle="modal" data-bs-target="#inputModal">Post</button>
+
+<!-- 모달 -->
+<div id="inputModal" class="modal fade" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inputModalLabel">New Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-section">
+                    <div class="emoji-selector">
+                        <span id="selectedEmoji" class="emoji-icon">😃</span>
+                        <div class="emoji-dropdown">
+                            <span class="emoji-option">😀</span>
+                            <span class="emoji-option">😅</span>
+                            <span class="emoji-option">😊</span>
+                            <span class="emoji-option">😢</span>
+                            <span class="emoji-option">😡</span>
+                            <span class="emoji-option">😍</span>
+                        </div>
+                    </div>
+                    <input type="text" id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message">
+                </div>
+                <div class="tag-section">
+                    <span class="tag-icon">＃</span>
+                    <div id="tagContainer" class="tag-container"></div>
+                    <input type="text" id="tagInput" class="tag-input" placeholder="Add tags and press Enter" aria-label="Tag">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="sendButton" type="button">Post</button>
+            </div>
+        </div>
     </div>
 </div>
