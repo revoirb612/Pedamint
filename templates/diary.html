@@ -1,0 +1,51 @@
+<div class="chat-container rounded"></div>
+    <!-- Input Section -->
+    <div class="input-section">
+        <div class="emoji-selector">
+            <span id="selectedEmoji" class="emoji-icon">😃</span>
+            <div class="emoji-dropdown">
+                <span class="emoji-option">😀</span>
+                <span class="emoji-option">😅</span>
+                <span class="emoji-option">😊</span>
+                <span class="emoji-option">😢</span>
+                <span class="emoji-option">😡</span>
+                <span class="emoji-option">😍</span>
+            </div>
+        </div>
+        <input type="text" id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message">
+    </div>
+
+    <!-- Tag Input Section -->
+    <div class="tag-section">
+        <span class="tag-icon">＃</span>
+        <div id="tagContainer" class="tag-container"></div>
+        <input type="text" id="tagInput" class="tag-input" placeholder="Add tags and press Enter" aria-label="Tag">
+    </div>
+
+    <!-- Icon and Button Section -->
+    <div class="icon-button-section">
+        <div class="icon-container">
+            <!--
+            <span class="icon">📷</span>
+            <span class="icon">🖼️</span>
+            <span class="icon">😃</span>
+            <span class="icon">⏰</span>
+            <span class="icon">📍</span>
+            -->
+        </div>
+        <button class="btn post-button" id="sendButton" type="button">Post</button>
+    </div>
+</div>
+
+<div class="chat-box flex-grow-1 rounded mt-2">
+    <!-- Date-based Messages -->
+    <div id="messageContainer" class="message-container"></div>
+</div>
+
+<!-- 검색 섹션 -->
+<div class="search-container mt-2">
+    <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+    </div>
+</div>
