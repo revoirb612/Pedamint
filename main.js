@@ -3,7 +3,7 @@ const { app, BrowserWindow, globalShortcut } = require('electron');
 function createWindow() {
     const win = new BrowserWindow({
         width: 1200,
-        height: 800,
+        height: 1200/1.5,
         webPreferences: {
             nodeIntegration: false
         },
@@ -20,6 +20,20 @@ function createWindow() {
         if (webContents.navigationHistory.canGoBack()) {
             webContents.navigationHistory.goBack();
         }
+    });
+
+    let escPressCount = 0; // esc 키 눌림 횟수 추적
+
+    // esc 키로 창 최소화 (두 번 눌러야 최소화)
+    globalShortcut.register('Esc', () => {
+        escPressCount++;
+        if (escPressCount === 2) {
+            win.minimize();
+            escPressCount = 0; // 카운트 초기화
+        }
+        setTimeout(() => {
+            escPressCount = 0; // 일정 시간 후 카운트 초기화
+        }, 500); // 500ms 이내에 두 번 눌러야 함
     });
 }
 

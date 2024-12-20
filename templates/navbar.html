@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-xl">
+    <div class="container-fluid" id="drag-area">
+        <a class="navbar-brand" href="#">
+            Pedamint_diary <span class="badge rounded-pill text-bg-warning">Beta</span>
+        </a>
+        {% if resp %}
+            <div class="btn-group align-items-center me-3" role="group" aria-label="Planner and Widgets buttons">
+                <button class="btn btn-outline-light" type="button" aria-label="Toggle planner"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="플래너" data-toggle="planner">
+                    <i class="fas fa-calendar"></i>
+                </button>
+                <button class="btn btn-outline-light" type="button" aria-label="Toggle widgets"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="위젯" data-toggle="widgets">
+                    <i class="fas fa-th-large"></i>
+                </button>
+            </div>
+        {% endif %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% if resp %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://www.i-scream.co.kr/" target="_blank">i-Scream</a></li>
+                            <li><a class="dropdown-item" href="https://indischool.com/" target="_blank">인디스쿨</a></li>
+                            <li><a class="dropdown-item" href="https://schoolbell-e.com/" target="_blank">학교종이</a></li>
+                            <li><a class="dropdown-item" href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+                            <li><a class="dropdown-item" href="https://chatgpt.com/" target="_blank">ChatGPT</a></li>
+                            <li><a class="dropdown-item" href="https://www.neti.go.kr/" target="_blank">중앙교육연수원</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="https://www.xn--o01bj2qisnovf.com/" target="_blank">한뼘코딩</a></li>
+                            <li><a class="dropdown-item" href="https://revoirb612.pythonanywhere.com/" target="_blank">그루그루지갑</a></li>
+                            <li><a class="dropdown-item" href="https://revoirb612.github.io/reclass/" target="_blank">리클래스</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+                            <li><a class="dropdown-item" href="#" id="exportData">데이터 내보내기</a></li>
+                            <li><a class="dropdown-item" href="#" id="importData">데이터 복원하기</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="resetData">데이터 초기화하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle navbar-email" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ resp["email"].split('@')[0] }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('user_profile') }}">나의 프로필</a></li>
+                            <li><a class="dropdown-item disabled" href="{{ url_for('index') }}">사용자 설정</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="https://revoirb612.notion.site/Profile-20f9dc88864d4ed09c021bd0dfe13d20?pvs=4" target="_blank">피드백</a></li>
+                            <li><a class="dropdown-item" href="https://revoirb612.notion.site/Release-Notes-75605117cd7b406d8503d57a6626565f?pvs=4" target="_blank">릴리즈 노트</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">로그아웃</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('google.login') }}">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('signup') }}">회원가입</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
