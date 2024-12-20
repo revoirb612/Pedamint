@@ -1,18 +1,20 @@
-<!-- 검색 섹션 -->
-<div class="search-container">
-    <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
-    </div>
-</div>
+<!-- Post 버튼 -->
+<button class="btn post-button" id="openModalButton" type="button" 
+        data-bs-toggle="modal" data-bs-target="#inputModal"
+        title="단축키: /">Post</button>
 
 <div class="chat-box flex-grow-1 rounded mt-2">
     <!-- Date-based Messages -->
     <div id="messageContainer" class="message-container"></div>
 </div>
 
-<!-- Post 버튼 -->
-<button class="btn post-button mt-2" id="openModalButton" type="button" data-bs-toggle="modal" data-bs-target="#inputModal">Post</button>
+<!-- 검색 섹션 -->
+<div class="search-container mt-2">
+    <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+    </div>
+</div>
 
 <!-- 모달 -->
 <div id="inputModal" class="modal fade" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
@@ -49,3 +51,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.key === '/') {
+            event.preventDefault();
+            document.getElementById('openModalButton').click();
+        }
+    });
+</script>

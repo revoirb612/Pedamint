@@ -1,0 +1,43 @@
+.post-button,
+.post-button:hover,
+.post-button:focus,
+.post-button:active {
+   border: none !important;
+   padding: 8px 16px !important;
+   border-radius: 20px !important;
+   background-color: var(--main-color) !important;
+   font-size: var(--font-size-regular) !important;
+   color: var(--light-text) !important;
+   box-shadow: none !important;
+   outline: none !important;
+}
+
+.options-button {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    color: var(--light-gray);
+}
+
+.options-button:hover {
+    color: var(--light-text);
+}
+
+.dropdown-menu {
+    font-size: 0.875rem;
+    border-color: var(--main-color);
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    color: var(--dark-text);
+}
+
+.dropdown-item:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-color);
+}

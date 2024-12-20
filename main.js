@@ -21,21 +21,6 @@ function createWindow() {
             webContents.navigationHistory.goBack();
         }
     });
-
-    let escPressCount = 0; // esc 키 눌림 횟수 추적
-
-    // esc 키로 창 최소화 (두 번 눌러야 최소화)
-    globalShortcut.register('Esc', () => {
-        escPressCount++;
-        if (escPressCount === 2) {
-            win.minimize();
-            escPressCount = 0; // 카운트 초기화
-        }
-        setTimeout(() => {
-            escPressCount = 0; // 일정 시간 후 카운트 초기화
-        }, 500); // 500ms 이내에 두 번 눌러야 함
-    });
-
     // Ctrl + Shift + M 키로 창 활성화
     globalShortcut.register('Ctrl+Shift+M', () => {
         if (win.isMinimized()) {
