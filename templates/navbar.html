@@ -43,23 +43,16 @@
                             <i class="fas fa-cog"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('user_profile') }}">나의 프로필</a></li>
+                            <li><a class="dropdown-item disabled" href="{{ url_for('index') }}">사용자 설정</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" id="exportData">데이터 내보내기</a></li>
                             <li><a class="dropdown-item" href="#" id="importData">데이터 복원하기</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" id="resetData">데이터 초기화하기</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle navbar-email" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ resp["email"].split('@')[0] }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ url_for('user_profile') }}">나의 프로필</a></li>
-                            <li><a class="dropdown-item disabled" href="{{ url_for('index') }}">사용자 설정</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="https://revoirb612.notion.site/Profile-20f9dc88864d4ed09c021bd0dfe13d20?pvs=4" target="_blank">피드백</a></li>
                             <li><a class="dropdown-item" href="https://revoirb612.notion.site/Release-Notes-75605117cd7b406d8503d57a6626565f?pvs=4" target="_blank">릴리즈 노트</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">로그아웃</a></li>
                         </ul>
                     </li>
                 {% else %}
@@ -70,6 +63,15 @@
                         <a class="nav-link" href="{{ url_for('signup') }}">회원가입</a>
                     </li>
                 {% endif %}
+                <li class="nav-item d-flex align-items-center">
+                    <a class="btn btn-link p-0 ms-5" href="{{ url_for('logout') }}" aria-label="Logout" title="로그아웃"
+                       onclick="if (!confirm('정말로 로그아웃하시겠습니까?')) { return false; }">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                    <button class="btn btn-link p-0 ms-3" onclick="if (confirm('정말로 종료하시겠습니까?')) { window.close(); }" aria-label="Close" title="프로그램 종료">
+                        <i class="fas fa-power-off"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
