@@ -30,54 +30,9 @@
     <link rel="manifest" href="/static/ico/site.webmanifest">
 
     <!-- Custom CSS -->
-    {% for css_file in ['style.css', 'component.css'] %}
+    {% for css_file in ['style.css', 'component.css', 'layout.css'] %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ css_file) }}">
     {% endfor %}
-
-    <style>
-        /* 셀 내용 중앙 정렬 */
-        .tabulator-cell {
-            text-align: center;
-        }
-
-        /* 헤더 셀 중앙 정렬 */
-        .tabulator-header .tabulator-col {
-            text-align: center;
-        }
-
-        /* 아이콘 버튼 스타일 */
-        .icon-button {
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: #0d6efd;
-            margin-right: 10px;
-        }
-        .icon-button:hover {
-            color: #0056b3;
-        }
-
-        /* 버튼 행 스타일 */
-        .button-row {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        #drag-area {
-            -webkit-app-region: drag; /* 드래그 가능 영역 설정 */
-            cursor: move; /* 드래그 가능 커서 */
-        }
-        .navbar-nav .nav-link, .btn-group .btn {
-            pointer-events: auto; /* 클릭 가능한 요소는 클릭 가능 */
-        }
-        .navbar-nav, .btn-group {
-            -webkit-app-region: no-drag; /* 클릭 가능한 요소는 드래그 불가 */
-        }
-
-    </style>
 </head>
 
 <body>
@@ -91,16 +46,19 @@
 
         <div id="main-content">
             {% if resp %}
-                <!-- PC 화면 레이아웃 -->
-                <div id="pc-layout" class="d-block">
-                    <div class="row m-0">
-                        <div class="col-xl-8 p-2 pe-0">
-                            {% include 'calendar.html' %}
-                        </div>
-                        <div class="col-xl-4 p-2 d-flex flex-column" style="max-height: calc(100vh - 55px);">
-                            {% include 'diary.html' %}
-                        </div>
-                    </div>
+                <!-- 캘린더 영역 -->
+                <div data-content="calendar" class="content-container active">
+                    {% include 'calendar.html' %}
+                </div>
+                
+                <!-- 다이어리 영역 -->
+                <div data-content="diary" class="content-container">
+                    {% include 'diary.html' %}
+                </div>
+                
+                <!-- 위젯 영역 -->
+                <div data-content="widgets" class="content-container">
+                    {% include 'tab.html' %}
                 </div>
             {% else %}
                 {% include 'hero.html' %}
@@ -173,31 +131,66 @@
                 checklists: '++id, studentName, subject, status'
             });
         </script>
+
+        <script src="/static/js/indexeddb.js"></script>
+        <script src="/static/js/calendar.js"></script>
+        <script src="/static/js/diary.js"></script>
+
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const navbar = document.querySelector('.navbar');
+                const mainContent = document.querySelector('#main-content');
+
+                function updateMainContentHeight() {
+                    const navbarHeight = navbar.offsetHeight;
+                    mainContent.style.height = `calc(100vh - ${navbarHeight}px)`;
+                }
+
+                // 초기 높이 설정
+                updateMainContentHeight();
+
+                // 창 크기 변경 시 높이 업데이트
+                window.addEventListener('resize', updateMainContentHeight);
+            });
+
             document.addEventListener("DOMContentLoaded", function() {
-                // Planner/Widgets 토글
                 const buttons = document.querySelectorAll("[data-toggle]");
                 const contents = document.querySelectorAll("[data-content]");
+
+                // 초기 상태 설정 (캘린더 표시)
+                contents.forEach(content => {
+                    if (content.getAttribute("data-content") === "calendar") {
+                        content.classList.add("active");
+                    } else {
+                        content.classList.remove("active");
+                    }
+                });
 
                 buttons.forEach(button => {
                     button.addEventListener("click", function() {
                         const targetContent = button.getAttribute("data-toggle");
-
+                        
+                        // 모든 컨텐츠 비활성화
                         contents.forEach(content => {
-                            if (content.getAttribute("data-content") === targetContent) {
-                                content.style.display = "block";
-                            } else {
-                                content.style.display = "none";
-                            }
+                            content.classList.remove("active");
                         });
+                        
+                        // 선택된 컨텐츠만 활성화
+                        const selectedContent = document.querySelector(`[data-content="${targetContent}"]`);
+                        if (selectedContent) {
+                            selectedContent.classList.add("active");
+                        }
+                        
+                        // 버튼 활성화 상태 토글
+                        buttons.forEach(btn => {
+                            btn.classList.remove("active");
+                        });
+                        button.classList.add("active");
                     });
                 });
             });
         </script>
 
-        <script src="/static/js/indexeddb.js"></script>
-        <script src="/static/js/calendar.js"></script>
-        <script src="/static/js/diary.js"></script>
     {% endif %}
 </body>
 </html>

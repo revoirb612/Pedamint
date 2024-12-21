@@ -1,22 +1,24 @@
-<!-- Post 버튼 -->
-<button class="btn post-button" id="openModalButton" type="button" 
-        data-bs-toggle="modal" data-bs-target="#inputModal"
-        title="단축키: /">Post</button>
+<div class="diary-container d-flex flex-column h-100">
+    <!-- Post 버튼 -->
+    <button class="btn post-button" id="openModalButton" type="button" 
+            data-bs-toggle="modal" data-bs-target="#inputModal"
+            title="단축키: /">Post</button>
 
-<div class="chat-box flex-grow-1 rounded mt-2">
-    <!-- Date-based Messages -->
-    <div id="messageContainer" class="message-container"></div>
-</div>
+    <!-- chat-box를 flex-grow-1로 설정 -->
+    <div class="chat-box flex-grow-1 rounded mt-2">
+        <div id="messageContainer" class="message-container h-100"></div>
+    </div>
 
-<!-- 검색 섹션 -->
-<div class="search-container mt-2">
-    <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+    <!-- 검색 섹션 -->
+    <div class="search-container mt-2">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+        </div>
     </div>
 </div>
 
-<!-- 모달 -->
+<!-- 모달은 컨테이너 밖으로 이동 -->
 <div id="inputModal" class="modal fade" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
