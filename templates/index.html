@@ -48,12 +48,14 @@
             {% if resp %}
                 <!-- 캘린더 영역 -->
                 <div data-content="calendar" class="content-container active">
-                    {% include 'calendar.html' %}
+                    <div class="row">
+                        {% include 'calendar.html' %}
+                    </div>
                 </div>
                 
                 <!-- 다이어리 영역 -->
                 <div data-content="diary" class="content-container">
-                    {% include 'diary.html' %}
+                    
                 </div>
                 
                 <!-- 위젯 영역 -->
@@ -64,6 +66,8 @@
                 {% include 'hero.html' %}
             {% endif %}
         </div>
+        
+        {% include 'modals.html' %}
     </div>
 
     {% if resp %}
@@ -140,10 +144,17 @@
             document.addEventListener('DOMContentLoaded', function() {
                 const navbar = document.querySelector('.navbar');
                 const mainContent = document.querySelector('#main-content');
+                const iframes = document.querySelectorAll('iframe');
 
                 function updateMainContentHeight() {
                     const navbarHeight = navbar.offsetHeight;
-                    mainContent.style.height = `calc(100vh - ${navbarHeight}px)`;
+                    const mainContentHeight = window.innerHeight - navbarHeight;
+                    mainContent.style.height = `${mainContentHeight}px`;
+
+                    // 모든 iframe의 높이를 main-content의 높이로 설정
+                    iframes.forEach(iframe => {
+                        iframe.style.height = `${mainContentHeight}px`;
+                    });
                 }
 
                 // 초기 높이 설정

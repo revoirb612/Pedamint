@@ -1,0 +1,106 @@
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel"></div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="eventModalLabel">📝</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return false;">
+                    <div class="mb-3">
+                        <div>
+                            <label for="event-title" class="form-label">제목</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" id="event-title" placeholder="텍스트를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="event-content" class="form-label">내용</label>
+                        <textarea class="form-control" id="event-content" rows="3" placeholder="내용을 입력하세요"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="event-tags" class="form-label">태그</label>
+                        <input type="text" class="form-control" id="event-tags" placeholder="쉼표로 구분하여 태그를 입력하세요">
+                    </div>
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label">배경색</label>
+                        </div>
+                        <div id="color-palette" class="d-flex flex-wrap">
+                            <div class="color-option" style="background-color:#3788D8;" data-color="#3788D8"></div>
+                            <div class="color-option" style="background-color:#FF5733;" data-color="#FF5733"></div>
+                            <div class="color-option" style="background-color:#FFC300;" data-color="#FFC300"></div>
+                            <div class="color-option" style="background-color:#C70039;" data-color="#C70039"></div>
+                            <div class="color-option" style="background-color:#581845;" data-color="#581845"></div>
+                            <div class="color-option" style="background-color:#28B463;" data-color="#28B463"></div>
+                            <div class="color-option" style="background-color:#1F618D;" data-color="#1F618D"></div>
+                            <div class="color-option" style="background-color:#117A65;" data-color="#117A65"></div>
+                            <div class="color-option" style="background-color:#CB4335;" data-color="#CB4335"></div>
+                            <div class="color-option" style="background-color:#76448A;" data-color="#76448A"></div>
+                            <div class="color-option" style="background-color:#1ABC9C;" data-color="#1ABC9C"></div>
+                        </div>
+                        <input type="hidden" id="event-color" value="#3788D8" tabindex="-1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="save-event">수정</button>
+                <button type="button" class="btn btn-danger" id="delete-event">삭제</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="inputModal" class="modal fade" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inputModalLabel">New Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-section">
+                    <div class="emoji-selector">
+                        <span id="selectedEmoji" class="emoji-icon">😃</span>
+                        <div class="emoji-dropdown">
+                            <span class="emoji-option">😀</span>
+                            <span class="emoji-option">😅</span>
+                            <span class="emoji-option">😊</span>
+                            <span class="emoji-option">😢</span>
+                            <span class="emoji-option">😡</span>
+                            <span class="emoji-option">😍</span>
+                        </div>
+                    </div>
+                    <input type="text" id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message">
+                </div>
+                <div class="tag-section">
+                    <span class="tag-icon">＃</span>
+                    <div id="tagContainer" class="tag-container"></div>
+                    <input type="text" id="tagInput" class="tag-input" placeholder="Add tags and press Enter" aria-label="Tag">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="sendButton" type="button">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('event-title').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // 폼 제출 방지
+            document.getElementById('save-event').click(); // 저장 버튼 클릭 이벤트 트리거
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.key === '/') {
+            event.preventDefault();
+            document.getElementById('openModalButton').click();
+        }
+    });
+</script>

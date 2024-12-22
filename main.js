@@ -5,7 +5,7 @@ function createWindow() {
         width: 1200,
         height: 1200/1.5,
         webPreferences: {
-            nodeIntegration: false
+            nodeIntegration: false,
         },
         icon: 'assets/favicon.ico',
         frame: false

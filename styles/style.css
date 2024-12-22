@@ -117,8 +117,6 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
     border-color: #000; /* 선택된 색상 표시 */
 }
 
-/* diary */
-
 .emoji-selector {
     position: relative;
     margin-right: 10px;
@@ -206,7 +204,7 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
 .chat-container {
     max-width: 100%;
     width: 100%;
-    padding: 15px;
+    padding: 0;
     margin: auto;
     background-color: var(--dark-bg);
     color: var(--main-color);
@@ -395,8 +393,6 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
 
 /* Widget */
 #tabHeader .nav-item {
-    margin-top: 5px;
-    margin-left: 5px;
     font-size: 0.9em;
     z-index: 1001;
 }

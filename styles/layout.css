@@ -1,3 +1,4 @@
+/* 기본 레이아웃 스타일 */
 html, body {
     height: 100%;
     margin: 0;
@@ -6,16 +7,6 @@ html, body {
     overflow-y: auto;
     box-sizing: border-box;
     font-family: "Gowun Dodum", sans-serif;
-}
-
-iframe {
-    display: block;
-    border: none;
-    margin: 0;
-    padding: 5px;
-    width: 100%;
-    height: calc(100vh - 55px - 42.61px);
-    overflow: hidden;
 }
 
 #content {
@@ -32,7 +23,18 @@ iframe {
     overflow: hidden;
 }
 
-/* Calendar layout */
+/* 아이프레임 스타일 */
+iframe {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 캘린더 레이아웃 */
 #calendar {
     flex: 1;
     min-height: 0;
@@ -42,7 +44,8 @@ iframe {
     display: flex;
     flex-direction: column;
 }
-/* Navbar layout */
+
+/* 네비게이션 바 스타일 */
 .navbar {
     padding: 0.5rem 1rem;
     font-size: var(--font-size-medium);
@@ -50,17 +53,28 @@ iframe {
     border-bottom: 1px solid var(--main-color);
 }
 
-/* Widget layout */
+.navbar-nav .nav-link, .btn-group .btn {
+    pointer-events: auto;
+}
+
+.navbar-nav, .btn-group {
+    -webkit-app-region: no-drag;
+} 
+
+/* 위젯 레이아웃 */
 #tabBody {
     padding: 0;
     margin: 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 #tabBody .tab-pane {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 } 
 
 /* 컨텐츠 컨테이너 스타일 */
@@ -104,14 +118,6 @@ iframe {
     cursor: move;
 }
 
-.navbar-nav .nav-link, .btn-group .btn {
-    pointer-events: auto;
-}
-
-.navbar-nav, .btn-group {
-    -webkit-app-region: no-drag;
-} 
-
 /* 메시지 컨테이너 스타일 */
 .message-container {
     flex: 1;
@@ -127,13 +133,7 @@ iframe {
     flex-shrink: 0;
 } 
 
-/* Post 버튼 스타일 */
-.post-button {
-    margin-bottom: 10px;
-}
-
 /* 검색 컨테이너 스타일 */
 .search-container {
     margin-top: auto;
-    padding: 10px;
-} 
+}
