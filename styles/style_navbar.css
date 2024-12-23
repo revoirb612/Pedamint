@@ -1,3 +1,23 @@
+.navbar-brand {
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    color: var(--main-color) !important;
+}
+
+.navbar-email {
+    color: var(--main-color) !important;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 0.75rem;
+    color: var(--light-text);
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--main-color);
+}
+
 .no-caret::after {
     display: none !important;
 }

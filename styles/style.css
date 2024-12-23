@@ -98,18 +98,6 @@ a {
     color: var(--gray-color);
 }
 
-.color-option {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 50%;
-}
-.color-option.selected {
-    border-color: #000; /* 선택된 색상 표시 */
-}
-
 /* intro */
 .jumbotron-section {
     background-color: #e0f2ff;
@@ -119,32 +107,6 @@ a {
 .icon-large {
     font-size: 2rem;
     margin-bottom: 15px;
-}
-
-/* Image styling to match video aspect ratio */
-.video-aspect-ratio {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
-.navbar-brand {
-    font-size: 1rem;
-    padding: 0.25rem 0;
-    color: var(--main-color) !important;
-}
-
-.navbar-email {
-    color: var(--main-color) !important;
-}
-
-.navbar-nav .nav-link {
-    padding: 0.5rem 0.75rem;
-    color: var(--light-text);
-}
-
-.navbar-toggler {
-    padding: 0.25rem 0.5rem;
-    background-color: var(--main-color);
 }
 
 /* Widget */
@@ -191,20 +153,6 @@ a {
 .tabulator-header .tabulator-col {
     text-align: center;
 }
-
-/* 아이콘 버튼 스타일 */
-.icon-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #0d6efd;
-    margin-right: 10px;
-}
-.icon-button:hover {
-    color: #0056b3;
-}
-
 /* 버튼 행 스타일 */
 .button-row {
     display: flex;

@@ -1,0 +1,11 @@
+.color-option {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+.color-option.selected {
+    border-color: #000; /* 선택된 색상 표시 */
+}
