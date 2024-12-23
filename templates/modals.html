@@ -72,7 +72,7 @@
                             <span class="emoji-option">😍</span>
                         </div>
                     </div>
-                    <input type="text" id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message">
+                    <textarea id="chatInput" class="chat-input" placeholder="What is happening?!" aria-label="Message"></textarea>
                 </div>
                 <div class="tag-section">
                     <span class="tag-icon">＃</span>
@@ -103,4 +103,12 @@
             document.getElementById('openModalButton').click();
         }
     });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/simplemde@1.11.18/dist/simplemde.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@1.11.18/dist/simplemde.min.css">
+
+<script>
+    // SimpleMDE 초기화
+    var simplemde = new SimpleMDE({ element: document.getElementById("chatInput") });
 </script>

@@ -160,3 +160,7 @@ a {
     align-items: center;
     margin-bottom: 20px;
 }
+
+.no-caret::after {
+    display: none !important;
+}
