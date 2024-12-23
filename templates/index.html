@@ -30,7 +30,7 @@
     <link rel="manifest" href="/static/ico/site.webmanifest">
 
     <!-- Custom CSS -->
-    {% for css_file in ['style.css', 'component.css', 'layout.css'] %}
+    {% for css_file in ['style.css', 'component.css', 'layout.css', 'style_diary.css', 'style_navbar.css'] %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ css_file) }}">
     {% endfor %}
 </head>

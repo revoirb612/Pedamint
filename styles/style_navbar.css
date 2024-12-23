@@ -1,0 +1,10 @@
+.no-caret::after {
+    display: none !important;
+}
+
+.dropdown-menu-config {
+    position: absolute !important;
+    left: 0 !important;
+    transform: translate(-80%, 0) !important;
+    margin-top: 0.1rem !important;
+}
