@@ -50,7 +50,7 @@
                 <div data-content="calendar" class="content-container active">
                     {% include 'calendar.html' %}
                 </div>
-                
+
                 <!-- 위젯 영역 -->
                 <div data-content="widgets" class="content-container">
                     {% include 'tab.html' %}
@@ -59,7 +59,7 @@
                 {% include 'hero.html' %}
             {% endif %}
         </div>
-        
+
         {% include 'modals.html' %}
     </div>
 
@@ -144,8 +144,8 @@
                 function updateMainContentHeight() {
                     const navbarHeight = navbar.offsetHeight;
                     const mainContentHeight = window.innerHeight - navbarHeight;
-                    const calendarHeight = mainContentHeight - 38;
-                    const diaryHeight = mainContentHeight - 38;
+                    const calendarHeight = mainContentHeight - 20;
+                    const diaryHeight = mainContentHeight - 20;
                     mainContent.style.height = `${mainContentHeight}px`;
                     calendar.style.height = `${calendarHeight}px`
                     diary.style.height = `${diaryHeight}px`
@@ -179,18 +179,18 @@
                 buttons.forEach(button => {
                     button.addEventListener("click", function() {
                         const targetContent = button.getAttribute("data-toggle");
-                        
+
                         // 모든 컨텐츠 비활성화
                         contents.forEach(content => {
                             content.classList.remove("active");
                         });
-                        
+
                         // 선택된 컨텐츠만 활성화
                         const selectedContent = document.querySelector(`[data-content="${targetContent}"]`);
                         if (selectedContent) {
                             selectedContent.classList.add("active");
                         }
-                        
+
                         // 버튼 활성화 상태 토글
                         buttons.forEach(btn => {
                             btn.classList.remove("active");

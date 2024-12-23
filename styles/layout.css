@@ -35,17 +35,10 @@ iframe {
 }
 
 /* 캘린더 레이아웃 */
-#calendar {
+#calendar, #diary {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-#diary {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* 전체 높이를 화면 높이로 설정 */
-    margin-left: -12px;
 }
 
 .post-button {
@@ -124,3 +117,11 @@ iframe {
     cursor: move;
 }
 
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.col-4, .col-8 {
+    padding: 0;
+}
