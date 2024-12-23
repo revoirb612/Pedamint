@@ -117,6 +117,8 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
     border-color: #000; /* 선택된 색상 표시 */
 }
 
+/* diary */
+
 .emoji-selector {
     position: relative;
     margin-right: 10px;
@@ -201,16 +203,6 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
     font-weight: bold;
 }
 
-.chat-container {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-    margin: auto;
-    background-color: var(--dark-bg);
-    color: var(--main-color);
-    border: 1px solid var(--main-color);
-}
-
 .input-section {
     display: flex;
     align-items: center;
@@ -250,7 +242,6 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
 
 .chat-box {
     background-color: var(--dark-bg);
-    border: 1px solid var(--main-color);
     overflow-y: scroll;
 }
 
@@ -260,7 +251,7 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
 
 .date-section {
     text-align: center;
-    margin: 15px 0;
+    margin-top: 15px;
 }
 
 .date-label {
@@ -326,7 +317,6 @@ body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
     align-items: center;
     text-align: center;
     background-color: var(--dark-bg);
-    border: 1px solid var(--main-color);
     border-radius: 20px;
     padding: 5px 15px;
 }

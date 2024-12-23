@@ -36,13 +36,29 @@ iframe {
 
 /* 캘린더 레이아웃 */
 #calendar {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+#diary {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 전체 높이를 화면 높이로 설정 */
+    margin-left: -12px;
+}
+
+.post-button {
+    flex-shrink: 0; /* 버튼의 높이는 고정 */
+}
+
+.search-bar {
+    flex-shrink: 0; /* 검색 섹션의 높이는 고정 */
+}
+
+.chat-box {
+    flex-grow: 1; /* 남은 공간을 모두 차지 */
+    overflow-y: hidden; /* 내용이 넘칠 경우 스크롤 */
 }
 
 /* 네비게이션 바 스타일 */
@@ -102,38 +118,9 @@ iframe {
     color: white;
 }
 
-/* 채팅박스 스타일 */
-.chat-box {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    overflow: hidden;
-}
-
 /* 드래그 영역 설정 */
 #drag-area {
     -webkit-app-region: drag;
     cursor: move;
 }
 
-/* 메시지 컨테이너 스타일 */
-.message-container {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-/* Post 버튼과 검색 컨테이너는 flex-shrink: 0으로 설정 */
-.post-button,
-.search-container {
-    flex-shrink: 0;
-} 
-
-/* 검색 컨테이너 스타일 */
-.search-container {
-    margin-top: auto;
-}

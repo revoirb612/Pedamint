@@ -1,21 +1,25 @@
-<div id="calendar" class="col-8"></div>
-
-<div id="diary" class="col-4 d-flex flex-column">
-    <!-- Post 버튼 -->
-    <button class="btn post-button" id="openModalButton" type="button"
-            data-bs-toggle="modal" data-bs-target="#inputModal"
-            title="단축키: /">Post</button>
-            
-    <!-- chat-box -->
-    <div class="chat-box rounded mt-2">
-        <div id="messageContainer" class="message-container"></div>
+<div class="row">
+    <div class="col-8">
+        <div id="calendar"></div>
     </div>
 
-    <!-- 검색 섹션 -->
-    <div class="search-container mt-2">
-        <div class="search-bar">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+    <div class="col-4">
+        <div id="diary">
+            <!-- Post 버튼 -->
+            <button class="btn post-button" id="openModalButton" type="button"
+                    data-bs-toggle="modal" data-bs-target="#inputModal"
+                    title="단축키: /">Post</button>
+
+            <!-- chat-box -->
+            <div class="chat-box rounded mt-2">
+                <div id="messageContainer"></div>
+            </div>
+
+            <!-- 검색 섹션 -->
+            <div class="search-bar mt-2">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search messages or tags" aria-label="Search">
+            </div>
         </div>
     </div>
 </div>
