@@ -45,7 +45,7 @@ iframe {
     padding-right: 10px;
 }
 
-.post-button {
+.record-button {
     flex-shrink: 0; /* 버튼의 높이는 고정 */
 }
 

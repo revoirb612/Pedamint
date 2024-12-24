@@ -1,3 +1,20 @@
+.record-button,
+.record-button:focus,
+.record-button:active {
+   border: none !important;
+   padding: 5px 16px !important;
+   border-radius: 20px !important;
+   background-color: var(--main-color) !important;
+   font-size: var(--font-size-regular) !important;
+   color: var(--light-text) !important;
+   box-shadow: none !important;
+   outline: none !important;
+}
+
+.record-button:hover {
+   color: var(--dark-text) !important;
+}
+
 .emoji-selector {
     position: relative;
     margin-right: 10px;

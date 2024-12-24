@@ -1,17 +1,3 @@
-.post-button,
-.post-button:hover,
-.post-button:focus,
-.post-button:active {
-   border: none !important;
-   padding: 7px 16px !important;
-   border-radius: 20px !important;
-   background-color: var(--main-color) !important;
-   font-size: var(--font-size-regular) !important;
-   color: var(--light-text) !important;
-   box-shadow: none !important;
-   outline: none !important;
-}
-
 .options-button {
     display: none;
     position: absolute;

@@ -30,7 +30,7 @@
     <link rel="manifest" href="/static/ico/site.webmanifest">
 
     <!-- Custom CSS -->
-    {% for css_file in ['style.css', 'component.css', 'layout.css', 'style_diary.css', 'style_navbar.css', 'style_modal.css'] %}
+    {% for css_file in ['style.css', 'component.css', 'layout.css', 'style_diary.css', 'style_navbar.css', 'style_modal.css', 'style_calendar.css'] %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ css_file) }}">
     {% endfor %}
 </head>
@@ -46,9 +46,9 @@
 
         <div id="main-content">
             {% if resp %}
-                <!-- 캘린더&다이어리 영역 -->
-                <div data-content="calendar" class="content-container active">
-                    {% include 'calendar.html' %}
+                <!-- 플래너 영역 -->
+                <div data-content="planner" class="content-container active">
+                    {% include 'planner.html' %}
                 </div>
 
                 <!-- 위젯 영역 -->
@@ -169,7 +169,7 @@
 
                 // 초기 상태 설정 (캘린더 표시)
                 contents.forEach(content => {
-                    if (content.getAttribute("data-content") === "calendar") {
+                    if (content.getAttribute("data-content") === "planner") {
                         content.classList.add("active");
                     } else {
                         content.classList.remove("active");

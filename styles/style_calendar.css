@@ -1,0 +1,75 @@
+/* 헤더 셀 쿠션 스타일 */
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+/* 날짜 번호 스타일 */
+.fc .fc-daygrid-day-number {
+    padding: 4px;
+    position: relative;
+    z-index: 4;
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+/* 전체 캘린더 스타일 */
+.fc {
+    font-size: 0.9em;
+}
+
+/* 버튼 스타일 */
+.fc-button, .fc-toolbar-chunk button {
+    background-color: var(--main-color) !important; 
+    color: var(--light-text);
+    border: var(--light-bg) !important; 
+}
+
+.fc-button, .fc-toolbar-chunk button:hover {
+    color: var(--dark-text);
+}
+
+/* 버튼 아이콘 스타일 */
+.fc .fc-button .fc-icon {
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+/* 버튼 호버 스타일 */
+.fc-button:hover, .fc-toolbar-chunk button:hover {
+    background-color: var(--hover-color);
+}
+
+/* 툴바 스타일 */
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 10px;
+}
+
+/* 툴바 제목 스타일 */
+.fc .fc-toolbar-title {
+    font-size: 1.4em;
+    margin: 0px;
+    color: var(--dark-text);
+}
+
+/* 이벤트 스타일 */
+.fc-event {
+    color: var(--gray-color);
+}
+
+/* 날짜 그리드 본문 스타일 */
+.fc-daygrid-body {
+    color: var(--gray-color);
+}
+
+/* 빈 리스트 쿠션 스타일 */
+.fc-list-empty-cushion {
+    color: var(--gray-color);
+}
+
+/* 시간 그리드 슬롯 레이블 스타일 */
+.fc-timegrid-slot-label {
+    color: var(--gray-color);
+}

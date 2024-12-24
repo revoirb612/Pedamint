@@ -38,66 +38,6 @@ a {
     text-decoration: none;
 }
 
-.fc .fc-col-header-cell-cushion {
-    display: inline-block;
-    padding: 2px 4px;
-    text-decoration: none;
-    color: var(--dark-text);
-}
-
-.fc .fc-daygrid-day-number {
-    padding: 4px;
-    position: relative;
-    z-index: 4;
-    text-decoration: none;
-    color: var(--dark-text);
-}
-
-.fc {
-    font-size: 0.9em;
-}
-
-.fc .fc-button .fc-icon {
-    font-size: 1em;
-    vertical-align: middle;
-}
-
-.fc .fc-toolbar.fc-header-toolbar {
-    margin-bottom: 10px;
-}
-
-.fc .fc-toolbar-title {
-    font-size: 1.4em;
-    margin: 0px;
-    color: var(--dark-text);
-}
-
-.fc-button, .fc-toolbar-chunk button {
-    background-color: var(--main-color);
-    color: var(--light-text);
-    border: none;
-}
-
-.fc-event {
-    color: var(--gray-color);
-}
-
-.fc-daygrid-body {
-    color: var(--gray-color);
-}
-
-.fc-button:hover, .fc-toolbar-chunk button:hover {
-    background-color: var(--hover-color);
-}
-
-.fc-list-empty-cushion {
-    color: var(--gray-color);
-}
-
-.fc-timegrid-slot-label {
-    color: var(--gray-color);
-}
-
 /* intro */
 .jumbotron-section {
     background-color: #e0f2ff;

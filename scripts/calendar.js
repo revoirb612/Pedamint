@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             todayCustom: {
-                text: '오늘',
+                text: '☀️',
                 click: function() {
                     calendar.today();
                     // 'schoolYear' 뷰에서도 오늘 날짜로 포커스 이동
@@ -184,13 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         buttonText: {
-            today: '오늘',
             month: '월',
             week: '주',
             day: '일',
             list: '목록',
-            timeGridWeek: '주간',
-            schoolYear: '학년도'
+            timeGridWeek: '5(7)',
+            schoolYear: '190+'
         },
         slotDuration: '00:10:00',
         slotMinTime: '08:30:00',
