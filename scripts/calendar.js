@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
             week: '주',
             day: '일',
             list: '목록',
-            timeGridWeek: '5(7)',
+            timeGridWeek: '5',
             schoolYear: '190+'
         },
         slotDuration: '00:10:00',
